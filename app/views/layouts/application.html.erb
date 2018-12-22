@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Bookers2</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
+
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+
+        <div class="container">
+
+          <nav class="nav navbar-nav navbar-left">
+            <span1>
+             Bookers
+           </span1>
+          </nav>
+
+          <nav class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></</span>
+            <%= link_to "Home", user_path(current_user),class: "home" %>
+
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            <%= link_to "Users", users_path, class: "users" %>
+
+            <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+            <%= link_to "Books", books_path, class: "books" %>
+
+            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+            <%= link_to "logout", destroy_user_session_path, class: "logout", method: :delete %>
+
+            <% else %>
+
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            <%= link_to "Home", root_path, class: "home" %>
+
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            <%= link_to "About", about_path, class: "about" %>
+
+            <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+            <%= link_to "Sign_up", new_user_registration_path,class: "sign_up" %>
+
+            <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+            <%= link_to "Login", new_user_session_path, class: "sign_in" %>
+
+            <% end %>
+          </nav>
+        </div>
+    </header>
+    <div class= "body">
+      <%= yield %>
+    </div>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-3 col-xs-offset-9">
+              <p>CopyRight Infratop.inc</p>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+  </body>
+</html>
