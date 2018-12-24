@@ -71,5 +71,5 @@ gem 'bootstrap-sass'
 
 gem 'jquery-rails'
 
-
+gem 'pry-byebug'
 

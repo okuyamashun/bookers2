@@ -30,14 +30,14 @@
 			</td>
 
 			<td>
-				<%= @book1.title %>
+				<%= link_to @book1.title, book_path(@book1), class: "book_#{@book1.id}" %>
 			</td>
 			<td>
 				<%= @book1.opinion %>
 			</td>
 			<td>
 				<% if @book1.user == current_user %>
-				<%= link_to "Edit", edit_book_path(@book1.id),class: "edit_#{@book1.id}" %>
+				<%= link_to "Edit", edit_book_path(@book1.id),class: "edit_book_#{@book1.id}" %>
 				<% end %>
 			</td>
 
