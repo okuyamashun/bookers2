@@ -17,7 +17,7 @@
 
 			<%= f.submit 'Update Book' %>
 
-			<%= link_to "Show" ,book_path(@book1.user),class: "show_#{@book1.user.id}" %>
+			<%= link_to "Show" ,book_path(@book1.user), class: "book_#{@book1.user.id}" %>
 
 			<%= link_to "Back",books_path, class: "back" %>
 
