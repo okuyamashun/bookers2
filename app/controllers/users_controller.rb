@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@book = Book.new
 		@books = @user.books
-		# @post_image = @user.profile_image
 
 	end
 

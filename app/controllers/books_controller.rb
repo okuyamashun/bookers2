@@ -37,12 +37,13 @@ class BooksController < ApplicationController
 	end
 
 	def update
-	    book1 = Book.find(params[:id])
-		if book1.update(book_params)
+	    @book1 = Book.find(params[:id])
+		if @book1.update(book_params)
 		flash[:notice] = "Book was successfully created."
-		redirect_to book_path(book1)
+		redirect_to book_path(@book1)
 		else
-	      render :index
+		flash[:notice] = "!!!!!!!!error created."
+	    render :edit
 	    end
 	end
 	def destroy
