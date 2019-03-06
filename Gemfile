@@ -73,3 +73,9 @@ gem 'jquery-rails'
 
 gem 'pry-byebug'
 
+gem 'carrierwave'
+
+
+
+
+
